@@ -16,6 +16,7 @@ import {
 } from "@material-ui/core";
 import Menu from "@material-ui/icons/Menu";
 import { Route, withRouter } from "react-router";
+import { GitHub, Twitter } from "./reusable/social";
 Slides.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
@@ -36,6 +37,7 @@ Slides.propTypes = {
 Slides.defaultProps = {
   routes: []
 };
+
 function Slides({ routes, ...props }) {
   const [isDrawerOpen, setDrawerOpen] = useLocalStorageSetState(
     true,
@@ -59,6 +61,8 @@ function Slides({ routes, ...props }) {
           <Typography variant="h6" noWrap>
             {headerTitle && headerTitle.humanReadableName}
           </Typography>
+          <Twitter />
+          <GitHub />
           <IconButton
             color="inherit"
             aria-label="Open drawer"
