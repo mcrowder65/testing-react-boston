@@ -2,14 +2,63 @@ import React from "react";
 import "babel-polyfill";
 import { Router as BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import AboutMe from "./slides/about-me";
-import Slides from "./slides";
-import Agenda from "./slides/agenda";
+import AboutMe from "src/slides/about-me";
+import Slides from "src/slides/slides";
+import Agenda from "src/slides/agenda";
+import What from "./slides/what";
+import Encourage from "./slides/encourage";
+import Best from "./slides/best";
+import Wrong from "./slides/wrong";
+import Effective from "./slides/effective/effective";
+import Contrived from "./slides/effective/contrived";
+import RealWorldExample from "./slides/effective/real-world-example";
+import Apis from "./slides/apis";
+import TestOfTime from "./slides/test-of-time";
 
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
-  { path: "/agenda", name: "Agenda", component: Agenda }
+  { path: "/agenda", name: "Agenda", component: Agenda },
+  {
+    path: "/what",
+    name: "What is React Testing Library?",
+    component: What
+  },
+  {
+    path: "/encourage",
+    name: "What does React Testing Library encourage?",
+    component: Encourage
+  },
+  {
+    path: "/best",
+    name: "What does React Testing Library do best?",
+    component: Best
+  },
+  {
+    path: "/wrong-tests",
+    name: "How to write tests wrong",
+    component: Wrong
+  },
+  {
+    path: "/effective",
+    name: "How do you effectively test a React component",
+    component: Effective,
+    subcomponents: [
+      { path: "/index", name: "Effective", component: Effective },
+      { path: "/contrived", name: "Contrived", component: Contrived },
+      { path: "/real-world", name: "Real World", component: RealWorldExample }
+    ]
+  },
+  {
+    path: "/apis",
+    name: "React Testing Library Apis",
+    component: Apis
+  },
+  {
+    path: "/test-of-time",
+    name: "Writing tests that stand the test of time",
+    component: TestOfTime
+  }
 ];
 
 function App() {

@@ -14,7 +14,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Menu from "@material-ui/icons/Menu";
 import { Route, withRouter } from "react-router";
-import { GitHub, Twitter } from "./reusable/social";
+import { GitHub, Twitter } from "src/reusable/social";
 Slides.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
@@ -28,7 +28,17 @@ Slides.propTypes = {
         PropTypes.element,
         PropTypes.func,
         PropTypes.node
-      ]).isRequired
+      ]).isRequired,
+      subcomponents: PropTypes.arrayOf(
+        PropTypes.shape({
+          path: PropTypes.string,
+          component: PropTypes.oneOfType([
+            PropTypes.element,
+            PropTypes.func,
+            PropTypes.node
+          ])
+        })
+      )
     })
   ).isRequired
 };
@@ -55,7 +65,7 @@ function Slides({ routes, ...props }) {
   return (
     <div>
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar aria-label="drawer">
           <Typography variant="h6" noWrap>
             {headerTitle && headerTitle.name} | @mcrowder65
           </Typography>
