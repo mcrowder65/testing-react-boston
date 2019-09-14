@@ -1,19 +1,17 @@
 import { useLocalStorageSetState } from "mooks";
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  AppBar,
-  Collapse,
-  Divider,
-  Drawer,
-  Grid,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Toolbar,
-  Typography
-} from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Collapse from "@material-ui/core/Collapse";
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import Menu from "@material-ui/icons/Menu";
 import { Route, withRouter } from "react-router";
 import { GitHub, Twitter } from "./reusable/social";
@@ -49,7 +47,7 @@ function Slides({ routes, ...props }) {
         props.history.push("/about-me");
       }
     },
-    [props.location.pathname]
+    [props.location.pathname, props.history]
   );
   const headerTitle = routes.find(route =>
     props.location.pathname.includes(route.path)

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button as MuiButton } from "@material-ui/core";
+import MuiButton from "@material-ui/core/Button";
 import { theme } from "./theme";
 
 export const Button = ({
