@@ -57,7 +57,7 @@ function Slides({ routes, ...props }) {
       <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6" noWrap>
-            {headerTitle && headerTitle.name}
+            {headerTitle && headerTitle.name} | @mcrowder65
           </Typography>
           <Twitter />
           <GitHub />

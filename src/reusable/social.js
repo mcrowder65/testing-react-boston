@@ -33,7 +33,9 @@ export const Twitter = ({ url = `https://twitter.com/mcrowder65` }) => (
   </Link>
 );
 
-export const GitHub = ({ url = `https://github.com/mcrowder65` }) => (
+export const GitHub = ({
+  url = `https://github.com/mcrowder65/testing-react-boston`
+}) => (
   <Link
     href={url}
     rel="noopener noreferrer"
