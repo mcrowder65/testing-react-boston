@@ -3,7 +3,7 @@ import "babel-polyfill";
 import { Router as BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import AboutMe from "src/slides/about-me";
-import Slides from "src/slides/slides";
+import Slides from "src/reusable/outline/outline";
 import Agenda from "src/slides/agenda";
 import What from "./slides/what";
 import Encourage from "./slides/encourage";
