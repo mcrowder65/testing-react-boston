@@ -1,7 +1,12 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { theme } from "./theme";
-
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Typography from "@material-ui/core/Typography";
 export const Text = ({ children, fontSize = theme.textSize }) => {
-  return <Typography style={{ fontSize }}>{children}</Typography>;
+  const isPhone = useMediaQuery("(max-width: 500px)");
+  return (
+    <Typography style={{ fontSize: isPhone ? 20 : fontSize }}>
+      {children}
+    </Typography>
+  );
 };
