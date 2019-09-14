@@ -12,7 +12,12 @@ const Link = styled.a`
   margin-top: 5px;
 `;
 export const Twitter = ({ url = `https://twitter.com/mcrowder65` }) => (
-  <Link href={url} aria-label="Visit my Twitter" target="_blank">
+  <Link
+    href={url}
+    rel="noopener noreferrer"
+    aria-label="Visit my Twitter"
+    target="_blank"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -29,7 +34,12 @@ export const Twitter = ({ url = `https://twitter.com/mcrowder65` }) => (
 );
 
 export const GitHub = ({ url = `https://github.com/mcrowder65` }) => (
-  <Link href={url} aria-label="Visit my GitHub" target="_blank">
+  <Link
+    href={url}
+    rel="noopener noreferrer"
+    aria-label="Visit my GitHub"
+    target="_blank"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="23"

@@ -4,10 +4,12 @@ import { Router as BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import AboutMe from "./slides/about-me";
 import Slides from "./slides";
+import Agenda from "./slides/agenda";
 
 const browserHistory = createBrowserHistory();
 const routes = [
-  { path: "/about-me", humanReadableName: "About me", component: AboutMe }
+  { path: "/about-me", name: "About me", component: AboutMe },
+  { path: "/agenda", name: "Agenda", component: Agenda }
 ];
 
 function App() {

@@ -23,7 +23,7 @@ Slides.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,
-      humanReadableName: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       component: PropTypes.oneOfType([
         PropTypes.element,
         PropTypes.func,
@@ -57,7 +57,7 @@ function Slides({ routes, ...props }) {
       <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6" noWrap>
-            {headerTitle && headerTitle.humanReadableName}
+            {headerTitle && headerTitle.name}
           </Typography>
           <Twitter />
           <GitHub />
@@ -112,9 +112,7 @@ function Slides({ routes, ...props }) {
                   );
                 }}
               >
-                <ListItemText
-                  primary={`#${index + 1} ${route.humanReadableName}`}
-                />
+                <ListItemText primary={`#${index + 1} ${route.name}`} />
               </ListItem>
               <Divider />
               {route.subcomponents ? (
@@ -141,9 +139,7 @@ function Slides({ routes, ...props }) {
                         >
                           <Grid container justify="flex-end">
                             <Grid item>
-                              <ListItemText>
-                                {subroute.humanReadableName}
-                              </ListItemText>
+                              <ListItemText>{subroute.name}</ListItemText>
                             </Grid>
                           </Grid>
                         </ListItem>
