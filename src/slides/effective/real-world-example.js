@@ -2,11 +2,7 @@ import React from "react";
 import { Container } from "../../reusable/container";
 
 const RealWorldExample = () => {
-  return (
-    <Container flexDirection="column">
-      What does React Testing Library encourage?
-    </Container>
-  );
+  return <Container flexDirection="column">real world example</Container>;
 };
 
 export default RealWorldExample;
