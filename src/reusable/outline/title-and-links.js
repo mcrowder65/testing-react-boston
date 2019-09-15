@@ -6,9 +6,11 @@ import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/icons/Menu";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { withRouter } from "react-router";
+import { useTheme } from "@material-ui/core";
 
 function TitleAndLinks(props) {
-  const isPhone = useMediaQuery("(min-width:500px)");
+  const theme = useTheme();
+  const isPhone = useMediaQuery(`(min-width: ${theme.maxWidth}px)`);
   const headerTitle = props.routes.find(route =>
     props.location.pathname.includes(route.path)
   );

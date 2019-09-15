@@ -26,7 +26,6 @@ const AboutMe = () => {
               <Li>lifting</Li>
               <Li>running</Li>
               <Li>programming</Li>
-              <Li>talking</Li>
             </ul>
           </div>
         </ul>

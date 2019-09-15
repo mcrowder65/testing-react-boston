@@ -1,26 +1,35 @@
 import React from "react";
 import { useLocalStorageSetState } from "mooks";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Route, withRouter } from "react-router";
 import Drawer from "./drawer";
 import TitleAndLinks from "./title-and-links";
 import useWindowSize from "@rehooks/window-size";
+import useMediaQuery from "@material-ui/core/useMediaQuery/useMediaQuery";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1
   },
-  content: props => ({
+  main: {
     flexGrow: 1,
-    padding: theme.spacing(3),
-    marginTop: 50,
-    width: props.isDrawerOpen
-      ? props.windowWidth - theme.drawerWidth
-      : props.windowWidth
-  }),
+    padding: theme.spacing(3)
+  },
+  content: props => {
+    const isDesktop = !props.isPhone;
+    let width =
+      isDesktop && props.isDrawerOpen
+        ? props.windowWidth - theme.drawerWidth
+        : props.windowWidth;
+    if (props.isPhone) width = props.windowWidth;
+    return {
+      marginTop: 50,
+      width
+    };
+  },
   toolbar: theme.mixins.toolbar
 }));
 
@@ -37,10 +46,14 @@ function Outline({ routes, ...props }) {
     },
     [props.location.pathname, props.history]
   );
+  const theme = useTheme();
+  const isPhone = useMediaQuery(`(max-width: ${theme.maxWidth}px)`);
+
   const windowSize = useWindowSize();
   const classes = useStyles({
     windowWidth: windowSize.innerWidth,
-    isDrawerOpen
+    isDrawerOpen,
+    isPhone
   });
   return (
     <div>
@@ -50,24 +63,26 @@ function Outline({ routes, ...props }) {
         </Toolbar>
       </AppBar>
       <Drawer routes={routes} isDrawerOpen={isDrawerOpen} />
-      <main className={classes.content}>
-        {routes.map((route, index) => {
-          return (
-            <React.Fragment key={`${route.path}-${index}`}>
-              <Route exact path={route.path} component={route.component} />
-              {(route.subcomponents || []).map((subroute, i) => {
-                return (
-                  <Route
-                    exact
-                    path={`${route.path}${subroute.path}`}
-                    component={subroute.component}
-                    key={`${route.path}-${subroute.path}-${i}`}
-                  />
-                );
-              })}
-            </React.Fragment>
-          );
-        })}
+      <main className={classes.main}>
+        <div className={classes.content}>
+          {routes.map((route, index) => {
+            return (
+              <React.Fragment key={`${route.path}-${index}`}>
+                <Route exact path={route.path} component={route.component} />
+                {(route.subcomponents || []).map((subroute, i) => {
+                  return (
+                    <Route
+                      exact
+                      path={`${route.path}${subroute.path}`}
+                      component={subroute.component}
+                      key={`${route.path}-${subroute.path}-${i}`}
+                    />
+                  );
+                })}
+              </React.Fragment>
+            );
+          })}
+        </div>
       </main>
       <div />
     </div>
