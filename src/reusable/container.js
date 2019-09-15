@@ -3,7 +3,7 @@ import { theme } from "./theme";
 
 export const Container = ({
   children,
-  flexDirection = "row",
+  flexDirection = "column",
   justifyContent = theme.containerAlignItems
 }) => {
   return (

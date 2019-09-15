@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     if (props.isPhone) width = props.windowWidth;
     return {
       marginTop: 50,
-      width: width - 20
+      width: width - 50
     };
   },
   toolbar: theme.mixins.toolbar

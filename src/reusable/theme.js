@@ -6,5 +6,6 @@ export const theme = {
   containerJustifyContent: "center",
   containerAlignItems: "center",
   drawerWidth: 240,
-  maxWidth: 767
+  maxWidth: 767,
+  unfocusedTextColor: "gray"
 };
