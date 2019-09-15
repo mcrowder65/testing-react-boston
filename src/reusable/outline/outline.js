@@ -7,15 +7,20 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { Route, withRouter } from "react-router";
 import Drawer from "./drawer";
 import TitleAndLinks from "./title-and-links";
+import useWindowSize from "@rehooks/window-size";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1
   },
-  content: {
+  content: props => ({
     flexGrow: 1,
-    padding: theme.spacing(3)
-  },
+    padding: theme.spacing(3),
+    marginTop: 50,
+    width: props.isDrawerOpen
+      ? props.windowWidth - theme.drawerWidth
+      : props.windowWidth
+  }),
   toolbar: theme.mixins.toolbar
 }));
 
@@ -32,8 +37,11 @@ function Outline({ routes, ...props }) {
     },
     [props.location.pathname, props.history]
   );
-
-  const classes = useStyles();
+  const windowSize = useWindowSize();
+  const classes = useStyles({
+    windowWidth: windowSize.innerWidth,
+    isDrawerOpen
+  });
   return (
     <div>
       <AppBar position="fixed" className={classes.appBar}>
@@ -43,25 +51,23 @@ function Outline({ routes, ...props }) {
       </AppBar>
       <Drawer routes={routes} isDrawerOpen={isDrawerOpen} />
       <main className={classes.content}>
-        <div style={{ marginTop: 100 }}>
-          {routes.map((route, index) => {
-            return (
-              <React.Fragment key={`${route.path}-${index}`}>
-                <Route exact path={route.path} component={route.component} />
-                {(route.subcomponents || []).map((subroute, i) => {
-                  return (
-                    <Route
-                      exact
-                      path={`${route.path}${subroute.path}`}
-                      component={subroute.component}
-                      key={`${route.path}-${subroute.path}-${i}`}
-                    />
-                  );
-                })}
-              </React.Fragment>
-            );
-          })}
-        </div>
+        {routes.map((route, index) => {
+          return (
+            <React.Fragment key={`${route.path}-${index}`}>
+              <Route exact path={route.path} component={route.component} />
+              {(route.subcomponents || []).map((subroute, i) => {
+                return (
+                  <Route
+                    exact
+                    path={`${route.path}${subroute.path}`}
+                    component={subroute.component}
+                    key={`${route.path}-${subroute.path}-${i}`}
+                  />
+                );
+              })}
+            </React.Fragment>
+          );
+        })}
       </main>
       <div />
     </div>

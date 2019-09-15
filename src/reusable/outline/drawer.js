@@ -9,8 +9,6 @@ import Collapse from "@material-ui/core/Collapse";
 import Grid from "@material-ui/core/Grid";
 import { withRouter } from "react-router";
 
-const drawerWidth = 240;
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
@@ -19,11 +17,11 @@ const useStyles = makeStyles(theme => ({
     zIndex: theme.zIndex.drawer + 1
   },
   drawer: {
-    width: drawerWidth,
+    width: theme.drawerWidth,
     flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth
+    width: theme.drawerWidth
   },
   content: {
     flexGrow: 1,

@@ -16,7 +16,7 @@ const AboutMe = () => {
       <h1 style={{ fontWeight: "normal" }}>
         <ul>
           <Li>I am Matt Crowder</Li>
-          <Li>mcrowder65 </Li>
+          <Li>@mcrowder65 </Li>
           <Li>Wife and dog</Li>
           <Li>NoVaJS co organizer</Li>
           <Li>Aspiring public speaker</Li>

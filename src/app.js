@@ -14,6 +14,9 @@ import Contrived from "./slides/effective/contrived";
 import RealWorldExample from "./slides/effective/real-world-example";
 import Apis from "./slides/apis";
 import TestOfTime from "./slides/test-of-time";
+import ThemeProvider from "@material-ui/styles/ThemeProvider";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { theme } from "./reusable/theme";
 
 const browserHistory = createBrowserHistory();
 const routes = [
@@ -63,11 +66,13 @@ const routes = [
 
 function App() {
   return (
-    <BrowserRouter history={browserHistory}>
-      <div>
-        <Slides routes={routes} />
-      </div>
-    </BrowserRouter>
+    <ThemeProvider theme={createMuiTheme(theme)}>
+      <BrowserRouter history={browserHistory}>
+        <div>
+          <Slides routes={routes} />
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

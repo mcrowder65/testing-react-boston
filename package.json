@@ -5,6 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.4.1",
     "@material-ui/icons": "^4.4.1",
+    "@material-ui/styles": "^4.4.1",
+    "@rehooks/window-size": "^1.0.2",
     "babel-polyfill": "^6.26.0",
     "history": "^4.9.0",
     "mooks": "^1.7.3",
