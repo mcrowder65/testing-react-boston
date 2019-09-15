@@ -6,14 +6,15 @@ import { Ul } from "../reusable/ul";
 
 const What = () => {
   return (
-    <Container flexDirection="column">
+    <Container>
       <Text>What is React Testing Library?</Text>
       <div>
         <Ul>
           <Li>Solution for testing React components</Li>
+          <Li>Can and should be used anywhere Enzyme is</Li>
           <Li>
-            Anywhere enzyme is used, React Testing Library can be used, and is
-            probably a better fit
+            The more your tests resemble the way your software is used, the more
+            confidence they can give you.
           </Li>
         </Ul>
       </div>
