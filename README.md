@@ -1,3 +1,6 @@
+[![Coverage Status][coverage-image]][coverage-url]
+[![Build Status][travis-image]][travis-url]
+
 <h3>Using react-testing-library to write stronger tests</h3>
 
 If you had to rewrite your tests when writing a hook in your React application, then you’re writing tests wrong.
@@ -12,3 +15,9 @@ In this talk, I will first introduce react-testing-library, what it is, what it 
 This was a talk given at <a href="https://reactboston.com">React Boston</a> on September 21, 2019.
 
 Slides/website are available are <a href="https://testingreactboston.netlify.com">available here</a>
+
+
+[travis-image]: https://travis-ci.org/mcrowder65/testing-react-boston.svg?branch=master
+[travis-url]: https://travis-ci.org/mcrowder65/testing-react-boston
+[coverage-image]: https://coveralls.io/repos/github/mcrowder65/testing-react-boston/badge.svg
+[coverage-url]: https://coveralls.io/github/mcrowder65/testing-react-boston
