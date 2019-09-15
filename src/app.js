@@ -38,6 +38,11 @@ const routes = [
     component: Best
   },
   {
+    path: "/apis",
+    name: "React Testing Library Apis",
+    component: Apis
+  },
+  {
     path: "/wrong-tests",
     name: "How to write tests wrong",
     component: Wrong
@@ -52,11 +57,7 @@ const routes = [
       { path: "/real-world", name: "Real World", component: RealWorldExample }
     ]
   },
-  {
-    path: "/apis",
-    name: "React Testing Library Apis",
-    component: Apis
-  },
+
   {
     path: "/test-of-time",
     name: "Writing tests that stand the test of time",

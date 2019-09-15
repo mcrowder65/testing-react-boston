@@ -4,13 +4,12 @@ import { Container } from "../reusable/container";
 import { Text } from "../reusable/text";
 
 const AboutMe = () => {
-  const code = "https://github.com/mcrowder65/testing-react-boston";
+  const code = "https://testingreactboston.netlify.com";
   return (
     <Container flexDirection="column">
-      <Text fontSize={20}>
-        Code available at{" "}
+      <Text>
         <a href={code} target="_blank" rel="noopener noreferrer">
-          {code}
+          {code.replace("https://", "")}
         </a>
       </Text>
       <h1 style={{ fontWeight: "normal" }}>
