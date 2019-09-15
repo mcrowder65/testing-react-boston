@@ -4,11 +4,11 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   text: props => {
-    let size = props.isPhone ? theme.phoneFontSize : props.fontSize;
-    if (size === undefined) size = theme.textSize;
+    let fontSize = props.isPhone ? theme.phoneFontSize : props.fontSize;
+    if (fontSize === undefined) fontSize = theme.textSize;
 
     return {
-      fontSize: size
+      fontSize
     };
   }
 }));
