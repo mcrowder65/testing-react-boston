@@ -4,7 +4,7 @@ import { Router as BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import AboutMe from "src/slides/about-me";
 import Slides from "src/reusable/outline/outline";
-import Agenda from "src/slides/agenda";
+// import Agenda from "src/slides/agenda";
 import What from "./slides/what";
 import Encourage from "./slides/encourage";
 import Best from "./slides/best";
@@ -21,7 +21,7 @@ import { theme } from "./reusable/theme";
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
-  { path: "/agenda", name: "Agenda", component: Agenda },
+  // { path: "/agenda", name: "Agenda", component: Agenda },
   {
     path: "/what",
     name: "What is React Testing Library?",

@@ -20,7 +20,7 @@ function TitleAndLinks(props) {
         <Grid container alignItems="center">
           <Grid item>
             <Typography variant="h6" noWrap>
-              {isPhone ? headerTitle && `${headerTitle.name} |` : ""}
+              {isPhone ? headerTitle && `${headerTitle.name} | ` : ""}
               @mcrowder65
             </Typography>
           </Grid>

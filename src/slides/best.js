@@ -1,10 +1,12 @@
 import React from "react";
 import { Container } from "../reusable/container";
+import { Text } from "../reusable/text";
 
 const Best = () => {
   return (
-    <Container flexDirection="column">
-      What does react testing library do best?
+    <Container>
+      <Text>What does it do best?</Text>
+      <Text fontMultiplier={5}>Testing React</Text>
     </Container>
   );
 };
