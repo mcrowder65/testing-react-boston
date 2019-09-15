@@ -9,7 +9,7 @@ const AboutMe = () => {
     <Container flexDirection="column">
       <Text fontSize={20}>
         Code available at{" "}
-        <a href={code} target="_blank">
+        <a href={code} target="_blank" rel="noopener noreferrer">
           {code}
         </a>
       </Text>
