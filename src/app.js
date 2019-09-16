@@ -12,11 +12,13 @@ import Wrong from "./slides/wrong";
 import Effective from "./slides/effective/effective";
 import Contrived from "./slides/effective/contrived";
 import RealWorldExample from "./slides/effective/real-world-example";
-import Apis from "./slides/apis";
 import TestOfTime from "./slides/test-of-time";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { theme } from "./reusable/theme";
+import Queries from "./slides/apis/queries";
+import FiringEvents from "./slides/apis/firing-events";
+import AsyncUtilities from "./slides/apis/async-utilities";
 
 const browserHistory = createBrowserHistory();
 const routes = [
@@ -40,7 +42,19 @@ const routes = [
   {
     path: "/apis",
     name: "React Testing Library Apis",
-    component: Apis
+    subcomponents: [
+      { path: "/queries", name: "Queries", component: Queries },
+      {
+        path: "/firing-events",
+        name: "Firing Events",
+        component: FiringEvents
+      },
+      {
+        path: "/async-utilities",
+        name: "Async Utilities",
+        component: AsyncUtilities
+      }
+    ]
   },
   {
     path: "/wrong-tests",

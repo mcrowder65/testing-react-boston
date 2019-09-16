@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "test/utils";
-import Apis from "src/slides/apis";
+import FiringEvents from "src/slides/apis/firing-events";
 
 test("that it renders", () => {
-  render(<Apis />);
+  render(<FiringEvents />);
 });

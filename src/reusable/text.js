@@ -7,14 +7,15 @@ const useStyles = makeStyles(theme => ({
     let fontSize = props.isPhone ? theme.phoneFontSize : props.fontSize;
     if (fontSize === undefined) fontSize = theme.textSize;
     return {
-      fontSize: fontSize * props.fontMultiplier
+      fontSize: fontSize * props.fontMultiplier,
+      textAlign: props.align
     };
   }
 }));
-export const Text = ({ children, fontSize, fontMultiplier }) => {
+export const Text = ({ children, fontSize, fontMultiplier, align }) => {
   const theme = useTheme();
   const isPhone = useMediaQuery(`(max-width: ${theme.maxWidth}px)`);
-  const classes = useStyles({ fontSize, isPhone, fontMultiplier });
+  const classes = useStyles({ fontSize, isPhone, fontMultiplier, align });
   return <Typography className={classes.text}>{children}</Typography>;
 };
 Text.defaultProps = {
