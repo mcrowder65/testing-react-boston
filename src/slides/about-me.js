@@ -17,14 +17,21 @@ const AboutMe = () => {
           <Li>I am Matt Crowder</Li>
           <Li>@mcrowder65 </Li>
           <Li>Wife and dog</Li>
-          <Li>NoVaJS co organizer</Li>
-          <Li>Aspiring public speaker</Li>
+          <Li>
+            <a
+              href={"https://meetup.com/NoVaJS"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NoVaJS organizer
+            </a>
+          </Li>
           <div>
             <Li>Things I enjoy:</Li>
             <ul>
               <Li>lifting</Li>
               <Li>running</Li>
-              <Li>programming</Li>
+              <Li>football</Li>
             </ul>
           </div>
         </ul>
