@@ -1,23 +1,16 @@
 import React from "react";
-import Markdown from "../../reusable/markdown";
+import Switch from "./switch";
+import { Container } from "../../reusable/container";
 
 const Wrong = () => {
-  const markdown = `
-  \`\`\`js
-  import React from "react";
-  
-  class Button extends React.Component {
-  
-    render() {
-    
-      return (
-        <button>A button</button>
-      )
-    }
-  }
-  \`\`\`
-  `;
-  return <Markdown markdownSrc={markdown} />;
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Container>
+      <Switch checked={checked} toggle={() => setChecked(!checked)} />
+      <Switch checked={checked} toggle={() => setChecked(!checked)} />
+      <Switch />
+    </Container>
+  );
 };
 
 export default Wrong;
