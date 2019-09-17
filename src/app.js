@@ -8,7 +8,7 @@ import Slides from "src/reusable/outline/outline";
 import What from "./slides/what";
 import Encourage from "./slides/encourage";
 import Best from "./slides/best";
-import Wrong from "./slides/wrong";
+import Wrong from "./slides/wrong/wrong";
 import Effective from "./slides/effective/effective";
 import Contrived from "./slides/effective/contrived";
 import RealWorldExample from "./slides/effective/real-world-example";

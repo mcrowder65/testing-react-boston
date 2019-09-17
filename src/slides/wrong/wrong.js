@@ -1,5 +1,5 @@
 import React from "react";
-import Markdown from "../reusable/markdown";
+import Markdown from "../../reusable/markdown";
 
 const Wrong = () => {
   const markdown = `
