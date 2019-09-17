@@ -1,8 +1,23 @@
 import React from "react";
-import { Container } from "../reusable/container";
+import Markdown from "../reusable/markdown";
 
 const Wrong = () => {
-  return <Container flexDirection="column">How to write tests wrong</Container>;
+  const markdown = `
+  \`\`\`js
+  import React from "react";
+  
+  class Button extends React.Component {
+  
+    render() {
+    
+      return (
+        <button>A button</button>
+      )
+    }
+  }
+  \`\`\`
+  `;
+  return <Markdown markdownSrc={markdown} />;
 };
 
 export default Wrong;

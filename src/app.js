@@ -25,6 +25,11 @@ const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
   // { path: "/agenda", name: "Agenda", component: Agenda },
   {
+    path: "/wrong-tests",
+    name: "How to write tests wrong",
+    component: Wrong
+  },
+  {
     path: "/what",
     name: "What is React Testing Library?",
     component: What
@@ -55,11 +60,6 @@ const routes = [
         component: AsyncUtilities
       }
     ]
-  },
-  {
-    path: "/wrong-tests",
-    name: "How to write tests wrong",
-    component: Wrong
   },
   {
     path: "/effective",

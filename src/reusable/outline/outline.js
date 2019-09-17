@@ -101,7 +101,7 @@ Outline.propTypes = {
         PropTypes.element,
         PropTypes.func,
         PropTypes.node
-      ]).isRequired,
+      ]),
       subcomponents: PropTypes.arrayOf(
         PropTypes.shape({
           path: PropTypes.string,
