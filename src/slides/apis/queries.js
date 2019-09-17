@@ -10,7 +10,7 @@ const SmallerLi = ({ fontMultiplier = 0.7, children }) => {
 const Queries = () => {
   return (
     <Container>
-      <Text align="center">Reading</Text>
+      <Text align="center">Queries</Text>
       <Ul>
         <SmallerLi>getByLabelText</SmallerLi>
         <SmallerLi>getByPlaceHolderText</SmallerLi>

@@ -50,6 +50,7 @@ function Drawer(props) {
           {props.routes.map((route, index) => (
             <React.Fragment key={`drawer-${route.path}-${index}`}>
               <ListItem
+                aria-label={route.name}
                 style={{
                   backgroundColor: props.location.pathname.includes(route.path)
                     ? "lightgray"
@@ -76,6 +77,7 @@ function Drawer(props) {
                     {(route.subcomponents || []).map((subroute, i) => {
                       return (
                         <ListItem
+                          aria-label={`${route.path}${subroute.path}`}
                           key={`subdrawer-${subroute.path}-${i}`}
                           button
                           style={{

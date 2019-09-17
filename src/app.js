@@ -26,7 +26,7 @@ const routes = [
   // { path: "/agenda", name: "Agenda", component: Agenda },
   {
     path: "/wrong-tests",
-    name: "How to write tests wrong",
+    name: "The wrong way to write tests",
     component: Wrong
   },
   {
