@@ -15,7 +15,12 @@ function SwitchHook(props) {
   return (
     <div className="container">
       <label className="switch">
-        <input type="checkbox" checked={getChecked()} onClick={toggle} />
+        <input
+          aria-label="checkbox"
+          type="checkbox"
+          checked={getChecked()}
+          onClick={toggle}
+        />
         <span className="slider" />
       </label>
     </div>
