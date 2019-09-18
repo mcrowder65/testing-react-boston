@@ -20,7 +20,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { theme } from "./reusable/theme";
 import Queries from "./slides/apis/queries";
 import FiringEvents from "./slides/apis/firing-events";
-import AsyncUtilities from "./slides/apis/async-utilities";
+// import AsyncUtilities from "./slides/apis/async-utilities";
 import translations from "./translations";
 
 const browserHistory = createBrowserHistory();
@@ -56,12 +56,12 @@ const routes = [
         path: "/firing-events",
         name: "Firing Events",
         component: FiringEvents
-      },
-      {
-        path: "/async-utilities",
-        name: "Async Utilities",
-        component: AsyncUtilities
       }
+      // {
+      //   path: "/async-utilities",
+      //   name: "Async Utilities",
+      //   component: AsyncUtilities
+      // }
     ]
   },
   {
