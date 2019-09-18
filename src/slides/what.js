@@ -6,7 +6,7 @@ import { Ul } from "../reusable/ul";
 
 const What = () => {
   return (
-    <Container>
+    <Container alignItems="center">
       <Text align="center">What is React Testing Library?</Text>
       <div>
         <Ul>

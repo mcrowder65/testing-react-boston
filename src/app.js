@@ -23,6 +23,12 @@ import FiringEvents from "./slides/apis/firing-events";
 // import AsyncUtilities from "./slides/apis/async-utilities";
 import translations from "./translations";
 
+if (!Intl.PluralRules) {
+  require("@formatjs/intl-pluralrules/polyfill");
+}
+if (!Intl.RelativeTimeFormat) {
+  require("@formatjs/intl-relativetimeformat/polyfill");
+}
 const browserHistory = createBrowserHistory();
 const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
