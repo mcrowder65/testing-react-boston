@@ -11,9 +11,9 @@ const Link = styled.a`
   margin-left: 20px;
   margin-top: 5px;
 `;
-export const Twitter = ({ url = `https://twitter.com/mcrowder65` }) => (
+export const Twitter = () => (
   <Link
-    href={url}
+    href={`https://twitter.com/mcrowder65`}
     rel="noopener noreferrer"
     aria-label="Visit my Twitter"
     target="_blank"
@@ -33,11 +33,9 @@ export const Twitter = ({ url = `https://twitter.com/mcrowder65` }) => (
   </Link>
 );
 
-export const GitHub = ({
-  url = `https://github.com/mcrowder65/testing-react-boston`
-}) => (
+export const GitHub = () => (
   <Link
-    href={url}
+    href={`https://github.com/mcrowder65/testing-react-boston`}
     rel="noopener noreferrer"
     aria-label="Visit my GitHub"
     target="_blank"

@@ -11,15 +11,18 @@ const Queries = () => {
   return (
     <Container>
       <Text align="center">Queries</Text>
+      <Text align="center" fontMultiplier={0.7}>
+        get || getAll || query || queryAll || find || findAll{" "}
+      </Text>
       <Ul>
-        <SmallerLi>getByLabelText</SmallerLi>
-        <SmallerLi>getByPlaceHolderText</SmallerLi>
-        <SmallerLi>getByText</SmallerLi>
-        <SmallerLi>getByAltText</SmallerLi>
-        <SmallerLi>getByTitle</SmallerLi>
-        <SmallerLi>getByDisplayValue</SmallerLi>
-        <SmallerLi>getByRole</SmallerLi>
-        <SmallerLi>getByTestId</SmallerLi>
+        <SmallerLi>ByLabelText</SmallerLi>
+        <SmallerLi>ByPlaceHolderText</SmallerLi>
+        <SmallerLi>ByText</SmallerLi>
+        <SmallerLi>ByAltText</SmallerLi>
+        <SmallerLi>ByTitle</SmallerLi>
+        <SmallerLi>ByDisplayValue</SmallerLi>
+        <SmallerLi>ByRole</SmallerLi>
+        <SmallerLi>ByTestId</SmallerLi>
       </Ul>
     </Container>
   );

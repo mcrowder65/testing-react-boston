@@ -4,6 +4,8 @@ import { Router as BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import AboutMe from "src/slides/about-me";
 import Slides from "src/reusable/outline/outline";
+import { IntlProvider } from "react-intl";
+
 // import Agenda from "src/slides/agenda";
 import What from "./slides/what";
 import Encourage from "./slides/encourage";
@@ -19,6 +21,7 @@ import { theme } from "./reusable/theme";
 import Queries from "./slides/apis/queries";
 import FiringEvents from "./slides/apis/firing-events";
 import AsyncUtilities from "./slides/apis/async-utilities";
+import translations from "./translations";
 
 const browserHistory = createBrowserHistory();
 const routes = [
@@ -83,9 +86,11 @@ function App() {
   return (
     <ThemeProvider theme={createMuiTheme(theme)}>
       <BrowserRouter history={browserHistory}>
-        <div>
-          <Slides routes={routes} />
-        </div>
+        <IntlProvider locale="en" messages={translations}>
+          <div>
+            <Slides routes={routes} />
+          </div>
+        </IntlProvider>
       </BrowserRouter>
     </ThemeProvider>
   );

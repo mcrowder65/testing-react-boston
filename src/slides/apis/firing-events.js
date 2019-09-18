@@ -1,19 +1,20 @@
 import React from "react";
 import { Container } from "../../reusable/container";
 import { Text } from "../../reusable/text";
-import { Li } from "../../reusable/li";
-import { Ul } from "../../reusable/ul";
 
+const FireEmoji = () => (
+  <span role="img" aria-label="fire-emoji">
+    🔥
+  </span>
+);
 const FiringEvents = () => {
   return (
     <Container>
       <Text align="center">Firing Events</Text>
-      <Ul>
-        <Li>fireEvent</Li>
-        <Ul>
-          <Li>asdf</Li>
-        </Ul>
-      </Ul>
+      <Text align="center">
+        <FireEmoji />
+        Any browser event can be simulated with fireEvent <FireEmoji />
+      </Text>
     </Container>
   );
 };
