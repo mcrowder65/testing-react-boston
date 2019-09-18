@@ -66,7 +66,7 @@ const routes = [
   },
   {
     path: "/effective",
-    name: "How do you effectively test a React component",
+    name: "Effectively testing a React component",
     component: Effective,
     subcomponents: [
       { path: "/index", name: "Effective", component: Effective },
