@@ -1,7 +1,9 @@
 const translations = {
   en: {
-    "real-world.text-input.label": "Theme primary color",
-    "real-world.submit": "Update primary color"
+    "real-world.swatch.label": "Theme primary color",
+    "real-world.submit": "Update primary color",
+    "real-world.source": "Source",
+    "real-world.test": "Test"
   }
 };
 
