@@ -7,7 +7,7 @@ test("that it renders", () => {
   render(<RealWorldExample />);
 });
 test("when clicking it does something", () => {
-  const { getByLabelText, getByTitle, debug } = render(<RealWorldExample />);
+  const { getByLabelText, getByTitle } = render(<RealWorldExample />);
   const button = getByLabelText("update primary color");
   expect(button).toHaveStyle(
     `background-color: #${theme.palette.primary.main}`
@@ -16,6 +16,5 @@ test("when clicking it does something", () => {
   fireEvent.click(getByTitle(newColor));
 
   fireEvent.click(getByLabelText("update primary color"));
-  debug();
   expect(button).toHaveStyle(`background-color: ${newColor}`);
 });
