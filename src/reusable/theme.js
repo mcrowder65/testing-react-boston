@@ -1,6 +1,5 @@
-import { createMuiTheme } from "@material-ui/core";
 
-export const theme = createMuiTheme({
+export const theme = {
   bigTextSize: 70,
   textSize: 50,
   phoneFontSize: 20,
@@ -8,5 +7,10 @@ export const theme = createMuiTheme({
   containerAlignItems: "center",
   drawerWidth: 240,
   maxWidth: 767,
-  unfocusedTextColor: "gray"
-});
+  unfocusedTextColor: "gray",
+  palette: {
+    primary: {
+      main: "#3f51b5"
+    }
+  }
+};

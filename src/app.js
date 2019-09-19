@@ -1,12 +1,6 @@
 import React from "react";
 import "babel-polyfill";
-import { Router as BrowserRouter } from "react-router-dom";
-import { createBrowserHistory } from "history";
 import AboutMe from "src/slides/about-me";
-import Slides from "src/reusable/outline/outline";
-import { IntlProvider } from "react-intl";
-import { connect, Provider } from "react-redux";
-import { createStore, compose } from "redux";
 // import Agenda from "src/slides/agenda";
 import What from "./slides/what";
 import Encourage from "./slides/encourage";
@@ -16,17 +10,16 @@ import Effective from "./slides/effective/effective";
 import Contrived from "./slides/effective/contrived";
 import RealWorldExample from "./slides/effective/real-world-example";
 import TestOfTime from "./slides/test-of-time";
-import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import Queries from "./slides/apis/queries";
 import FiringEvents from "./slides/apis/firing-events";
 // import AsyncUtilities from "./slides/apis/async-utilities";
-import translations from "./translations";
-import rootReducer from "./redux/reducers";
-import { initialState } from "./redux/initial-state";
-import { getTheme } from "./redux/selectors";
-import "./polyfills";
 
-const browserHistory = createBrowserHistory();
+import translations from "./translations";
+
+import "./polyfills";
+import Providers from "./providers";
+import Outline from "./reusable/outline/outline";
+
 const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
   // { path: "/agenda", name: "Agenda", component: Agenda },
@@ -84,34 +77,18 @@ const routes = [
     component: TestOfTime
   }
 ];
-const composeEnhancers =
-  (process.env.NODE_ENV !== "prod" &&
-    process.env.NODE_ENV !== "production" &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
-const store = createStore(rootReducer, initialState, composeEnhancers());
 const locale = "en";
-function UnconnectedComponent(props) {
-  return (
-    <ThemeProvider theme={props.theme}>
-      <BrowserRouter history={browserHistory}>
-        <IntlProvider locale={locale} messages={translations[locale]}>
-          <div>
-            <Slides routes={routes} />
-          </div>
-        </IntlProvider>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
-}
-
-const mapStateToProps = state => ({ theme: getTheme(state) });
-const ConnectedComponent = connect(mapStateToProps)(UnconnectedComponent);
 function App() {
   return (
-    <Provider store={store}>
-      <ConnectedComponent />
-    </Provider>
+    <Providers
+      translations={translations[locale]}
+      locale={locale}
+      routes={routes}
+    >
+      <div>
+        <Outline routes={routes} />
+      </div>
+    </Providers>
   );
 }
 
