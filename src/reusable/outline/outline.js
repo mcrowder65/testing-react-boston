@@ -97,19 +97,11 @@ Outline.propTypes = {
     PropTypes.shape({
       path: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      component: PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.func,
-        PropTypes.node
-      ]),
+      component: PropTypes.any,
       subcomponents: PropTypes.arrayOf(
         PropTypes.shape({
           path: PropTypes.string,
-          component: PropTypes.oneOfType([
-            PropTypes.element,
-            PropTypes.func,
-            PropTypes.node
-          ])
+          component: PropTypes.any
         })
       )
     })
