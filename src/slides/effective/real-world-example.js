@@ -8,7 +8,6 @@ import { SwatchesPicker } from "react-color";
 import { updateThemeColor } from "../../redux/actions";
 import { Button } from "../../reusable/button";
 import { Text } from "../../reusable/text";
-
 const RealWorldExample = props => {
   const [swatchColor, setSwatchColor] = React.useState(props.primaryColor);
   return (
@@ -18,16 +17,16 @@ const RealWorldExample = props => {
       </Text>
       <SwatchesPicker
         color={swatchColor}
-        onChangeComplete={({ hex }) => setSwatchColor(hex)}
+        onChange={({ hex }) => setSwatchColor(hex)}
       />
       <Button
+        aria-label="update primary color"
         variant="contained"
         color="primary"
         onClick={() => props.updateThemeColor(swatchColor)}
       >
         <FormattedMessage id="real-world.submit" />
       </Button>
-
       <Text>
         <a
           href="https://github.com/mcrowder65/testing-react-boston/blob/9e83aa9f77170acf42f422880d2e7b1e43f9466b/src/slides/effective/real-world-example.js"

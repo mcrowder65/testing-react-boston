@@ -10,9 +10,14 @@ export const Button = ({
 }) => {
   const theme = useTheme();
   const isPhone = useMediaQuery(`(max-width: ${theme.maxWidth}px)`);
+  const styleToApply = isPhone ? { marginTop: 10 } : style;
   return (
     <MuiButton
-      style={isPhone ? { marginTop: 10 } : style}
+      style={{
+        ...styleToApply,
+        // Edge case where in tests for some reason backgroundColor comes back as ButtonFace
+        backgroundColor: color === "primary" && theme.palette.primary.main
+      }}
       variant={variant}
       color={color}
       {...props}

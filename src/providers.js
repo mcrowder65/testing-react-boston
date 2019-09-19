@@ -5,7 +5,7 @@ import { createStore, compose } from "redux";
 import { createBrowserHistory } from "history";
 import { initialState } from "./redux/initial-state";
 import { createMuiTheme } from "@material-ui/core";
-import ThemeProvider from "@material-ui/styles/ThemeProvider";
+import { MuiThemeProvider as ThemeProvider } from "@material-ui/core/styles";
 import { Router as BrowserRouter } from "react-router";
 import { IntlProvider } from "react-intl";
 import { getTheme } from "./redux/selectors";
