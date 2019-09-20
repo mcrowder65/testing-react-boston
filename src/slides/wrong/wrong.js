@@ -12,7 +12,7 @@ const Wrong = () => {
       <Switch checked={checked} toggle={() => setChecked(!checked)} />
       <Text>Uncontrolled</Text>
       <Switch />
-
+      <Switch />
       <a
         href="https://github.com/mcrowder65/testing-react-boston/blob/52acf3149426a5b4417ac5bb49c687e2f435b20a/src/slides/wrong/switch.js"
         target="_blank"
