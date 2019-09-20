@@ -12,10 +12,6 @@ const What = () => {
         <Ul>
           <Li>Solution for testing React components</Li>
           <Li>Can and should be used anywhere Enzyme is</Li>
-          <Li>
-            The more your tests resemble the way your software is used, the more
-            confidence they can give you.
-          </Li>
         </Ul>
       </div>
     </Container>

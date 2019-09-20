@@ -9,9 +9,13 @@ const Encourage = () => {
     <Container>
       <Text align="center">What does React Testing Library encourage?</Text>
       <Ul>
-        <Li>Don't get caught up in the implementation</Li>
-        <Li>Confidence</Li>
+        {/*<Li>Don't get caught up in the implementation</Li>*/}
+        {/*<Li>Confidence</Li>*/}
         <Li>Testing on the output and simulating events through the DOM</Li>
+        <Li>
+          The more your tests resemble the way your software is used, the more
+          confidence they can give you.
+        </Li>
       </Ul>
     </Container>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-function SwitchHook(props) {
+function Switch(props) {
   const [checked, setChecked] = React.useState(false);
   const getChecked = () => {
     return props.checked !== undefined ? props.checked : checked;
@@ -27,4 +27,4 @@ function SwitchHook(props) {
   );
 }
 
-export default SwitchHook;
+export default Switch;

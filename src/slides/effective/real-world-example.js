@@ -11,7 +11,7 @@ import { Text } from "../../reusable/text";
 const RealWorldExample = props => {
   const [swatchColor, setSwatchColor] = React.useState(props.primaryColor);
   return (
-    <Container flexDirection="column">
+    <Container>
       <Text>
         <FormattedMessage id="real-world.swatch.label" />
       </Text>

@@ -4,7 +4,7 @@ import AboutMe from "src/slides/about-me";
 // import Agenda from "src/slides/agenda";
 import What from "./slides/what";
 import Encourage from "./slides/encourage";
-import Best from "./slides/best";
+// import Best from "./slides/best";
 import Wrong from "./slides/wrong/wrong";
 import Effective from "./slides/effective/effective";
 import Contrived from "./slides/effective/contrived";
@@ -20,9 +20,15 @@ import "./polyfills";
 import Providers from "./providers";
 import Outline from "./reusable/outline/outline";
 import { createPersistedStore } from "./redux/create-store";
+import HowIUsedToWriteTests from "./slides/how-i-used-to-write-tests";
 
 const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
+  {
+    path: "/how-i-used-to-write-tests",
+    name: "How I used to write tests",
+    component: HowIUsedToWriteTests
+  },
   // { path: "/agenda", name: "Agenda", component: Agenda },
   {
     path: "/wrong-tests",
@@ -39,11 +45,11 @@ const routes = [
     name: "What does React Testing Library encourage?",
     component: Encourage
   },
-  {
-    path: "/best",
-    name: "What does React Testing Library do best?",
-    component: Best
-  },
+  // {
+  //   path: "/best",
+  //   name: "What does React Testing Library do best?",
+  //   component: Best
+  // },
   {
     path: "/apis",
     name: "React Testing Library Apis",
