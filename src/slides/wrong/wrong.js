@@ -14,14 +14,14 @@ const Wrong = () => {
       <Switch />
       <Switch />
       <a
-        href="https://github.com/mcrowder65/testing-react-boston/blob/52acf3149426a5b4417ac5bb49c687e2f435b20a/src/slides/wrong/switch.js"
+        href="https://github.com/mcrowder65/testing-react-boston/blob/master/src/slides/wrong/switch.js"
         target="_blank"
         rel="noopener noreferrer"
       >
         Source
       </a>
       <a
-        href="https://github.com/mcrowder65/testing-react-boston/blob/93c6c8e5e99383038372128246e12b7e81d898bd/src/slides/wrong/__tests__/switch.test.js"
+        href="https://github.com/mcrowder65/testing-react-boston/blob/master/src/slides/wrong/__tests__/switch.test.js"
         target="_blank"
         rel="noopener noreferrer"
       >
