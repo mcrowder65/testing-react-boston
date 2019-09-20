@@ -13,6 +13,15 @@ const Effective = () => {
         <Li>
           When using class components, consider render the only public function
         </Li>
+        <Li>
+          <a
+            href="https://github.com/mcrowder65/testing-react-boston/blob/master/test/utils.js#L6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Utilize a wrapper around render
+          </a>
+        </Li>
       </Ul>
     </Container>
   );

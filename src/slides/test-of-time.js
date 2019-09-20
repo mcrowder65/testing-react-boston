@@ -10,13 +10,8 @@ const TestOfTime = () => {
       <Text>Writing tests that will stand the test of time</Text>
       <Ul>
         <Li>
-          <a
-            href="https://github.com/mcrowder65/testing-react-boston/blob/master/test/utils.js#L6"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Utilize a wrapper around render
-          </a>
+          The more your tests resemble the way your software is used, the more
+          confidence they can give you.
         </Li>
       </Ul>
     </Container>
