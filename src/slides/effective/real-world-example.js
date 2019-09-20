@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "../../reusable/container";
-import { compose } from "redux";
 import { getPrimaryColor } from "../../redux/selectors";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
@@ -8,6 +7,7 @@ import { SwatchesPicker } from "react-color";
 import { updateThemeColor } from "../../redux/actions";
 import { Button } from "../../reusable/button";
 import { Text } from "../../reusable/text";
+
 const RealWorldExample = props => {
   const [swatchColor, setSwatchColor] = React.useState(props.primaryColor);
   return (
@@ -21,8 +21,6 @@ const RealWorldExample = props => {
       />
       <Button
         aria-label="update primary color"
-        variant="contained"
-        color="primary"
         onClick={() => props.updateThemeColor(swatchColor)}
       >
         <FormattedMessage id="real-world.submit" />
@@ -58,11 +56,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   updateThemeColor
 };
-const enhance = compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )
-);
-
-export default enhance(RealWorldExample);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RealWorldExample);

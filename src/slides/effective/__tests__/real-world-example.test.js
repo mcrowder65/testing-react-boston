@@ -1,8 +1,8 @@
 import React from "react";
 import { fireEvent } from "@testing-library/react";
-import { render } from "test/utils";
 import RealWorldExample from "src/slides/effective/real-world-example";
 import { theme } from "../../../reusable/theme";
+import { render } from "../../../../test/utils";
 
 test("that it renders", () => {
   render(<RealWorldExample />);
@@ -16,9 +16,11 @@ AND WHEN rerendering the component the new primary color stays`, () => {
   );
 
   const getButton = () => getByLabelText("update primary color");
+
   expect(getButton()).toHaveStyle(
     `background-color: #${theme.palette.primary.main}`
   );
+
   const newColor = `#9c27b0`;
   fireEvent.click(getByTitle(newColor));
 
