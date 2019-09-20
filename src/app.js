@@ -19,6 +19,7 @@ import translations from "./translations";
 import "./polyfills";
 import Providers from "./providers";
 import Outline from "./reusable/outline/outline";
+import { createPersistedStore } from "./redux/create-store";
 
 const routes = [
   { path: "/about-me", name: "About me", component: AboutMe },
@@ -78,9 +79,12 @@ const routes = [
   }
 ];
 const locale = "en";
+
+const { store } = createPersistedStore();
 function App() {
   return (
     <Providers
+      store={store}
       translations={translations[locale]}
       locale={locale}
       routes={routes}
